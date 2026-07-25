@@ -1,0 +1,212 @@
+# Publishes the whole data plane to GitHub Pages: the committed JSON tiers
+# (packs/) plus the per-pack .basis texture atlases, which are NEVER committed
+# here. Textures are sourced per pack, in order of preference:
+#   1. the Actions cache (saved by any previous run);
+#   2. bootstrap from the fbe repo's committed copy (transition path — goes
+#      away once fbe evicts its data/output textures);
+#   3. full regeneration via the fbe exporter (workflow_dispatch with
+#      `regenerate`; needs FACTORIO_USERNAME / FACTORIO_TOKEN secrets).
+# Regeneration also rebuilds the JSON tiers and FAILS the run if they drift
+# from the committed ones (regenerated JSON is uploaded as an artifact to
+# commit), so the published site can never mix mismatched JSON and textures.
+name: Deploy data plane
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      regenerate:
+        description: "Regenerate pack(s) with the exporter (needs secrets)"
+        type: choice
+        default: none
+        options: [none, all, vanilla-2.0, space-age, space-exploration]
+
+# One deploy at a time; a new push supersedes a queued one but never cancels
+# a running deploy mid-publish.
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  FBE_REPO: trisiak/factorio-blueprint-editor
+
+jobs:
+  textures:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        pack: [vanilla-2.0, space-age, space-exploration]
+    steps:
+      - uses: actions/checkout@v4
+
+      # Most-recent-wins cache: every run saves under a fresh run_id-suffixed
+      # key; restore picks the newest by prefix. A regen therefore supersedes
+      # older textures without cache-key gymnastics.
+      - name: Restore textures from cache
+        id: cache
+        uses: actions/cache/restore@v4
+        with:
+          path: textures/${{ matrix.pack }}
+          key: textures-${{ matrix.pack }}-${{ github.run_id }}
+          restore-keys: |
+            textures-${{ matrix.pack }}-
+
+      - name: Decide texture source
+        id: source
+        run: |
+          REGEN="${{ github.event.inputs.regenerate || 'none' }}"
+          if [ "$REGEN" = "all" ] || [ "$REGEN" = "${{ matrix.pack }}" ]; then
+            echo "mode=regen" >> "$GITHUB_OUTPUT"
+          elif [ -d "textures/${{ matrix.pack }}" ] && [ -n "$(find textures/${{ matrix.pack }} -name '*.basis' -print -quit)" ]; then
+            echo "mode=cache" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=bootstrap" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Bootstrap textures from the fbe repo
+        if: steps.source.outputs.mode == 'bootstrap'
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse "https://github.com/$FBE_REPO" fbe-data
+          git -C fbe-data sparse-checkout set "packages/exporter/data/output/${{ matrix.pack }}"
+          SRC="fbe-data/packages/exporter/data/output/${{ matrix.pack }}"
+          [ -d "$SRC" ] || { echo "::error::pack '${{ matrix.pack }}' not found in $FBE_REPO"; exit 1; }
+          mkdir -p "textures/${{ matrix.pack }}"
+          # Texture atlas = the per-mod __<mod>__/ dirs (+ metadata.json, the
+          # exporter's incremental cache — kept with the textures so a later
+          # regen can skip unchanged sprites; excluded from the site).
+          find "$SRC" -maxdepth 1 -type d -name '__*__' -exec cp -r {} "textures/${{ matrix.pack }}/" \;
+          cp "$SRC/metadata.json" "textures/${{ matrix.pack }}/" 2>/dev/null || true
+          rm -rf fbe-data
+          echo "Bootstrapped $(find textures/${{ matrix.pack }} -name '*.basis' | wc -l) .basis files"
+
+      - name: Regenerate with the fbe exporter
+        if: steps.source.outputs.mode == 'regen'
+        env:
+          FACTORIO_USERNAME: ${{ secrets.FACTORIO_USERNAME }}
+          FACTORIO_TOKEN: ${{ secrets.FACTORIO_TOKEN }}
+        run: |
+          [ -n "$FACTORIO_USERNAME" ] && [ -n "$FACTORIO_TOKEN" ] || {
+            echo "::error::FACTORIO_USERNAME / FACTORIO_TOKEN secrets are required for regeneration"; exit 1; }
+          sudo apt-get update -q && sudo apt-get install -y -q xvfb
+          git clone --depth 1 "https://github.com/$FBE_REPO" fbe
+          cd fbe/packages/exporter
+          printf 'FACTORIO_USERNAME=%s\nFACTORIO_TOKEN=%s\n' "$FACTORIO_USERNAME" "$FACTORIO_TOKEN" > .env
+          # The manifest of record is THIS repo's.
+          mkdir -p data/output
+          cp "$GITHUB_WORKSPACE/packs/packs.json" data/output/packs.json
+          # Seed the incremental atlas cache from the restored/bootstrapped
+          # textures so unchanged sprites are skipped.
+          if [ -d "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}" ]; then
+            mkdir -p "data/output/${{ matrix.pack }}"
+            cp -r "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/." "data/output/${{ matrix.pack }}/"
+          fi
+          # The exporter ends in a serve loop and never exits: poll for the
+          # manifest update (its final step) and tear the process tree down.
+          xvfb-run -a cargo run --release -- --pack "${{ matrix.pack }}" > run.log 2>&1 &
+          RUN_PID=$!
+          BEFORE=$(python3 -c "import json;print(next(p for p in json.load(open('data/output/packs.json')) if p['id']=='${{ matrix.pack }}').get('generated','none'))")
+          DONE=0
+          for i in $(seq 1 2000); do
+            sleep 10
+            NOW=$(python3 -c "import json;print(next(p for p in json.load(open('data/output/packs.json')) if p['id']=='${{ matrix.pack }}').get('generated','none'))" 2>/dev/null || echo "$BEFORE")
+            if [ "$NOW" != "$BEFORE" ]; then DONE=1; break; fi
+            kill -0 "$RUN_PID" 2>/dev/null || break
+          done
+          pkill -P "$RUN_PID" 2>/dev/null || true; kill "$RUN_PID" 2>/dev/null || true
+          pkill -f 'bin/x64/factorio' 2>/dev/null || true
+          [ "$DONE" = 1 ] || { echo "::error::exporter did not complete"; tail -50 run.log; exit 1; }
+          tail -20 run.log
+          # Drift check: the regenerated JSON tiers must match the committed
+          # ones, or the deploy stops and the fresh JSON is offered to commit.
+          OUT="data/output/${{ matrix.pack }}"
+          mkdir -p "$GITHUB_WORKSPACE/regen-json/${{ matrix.pack }}"
+          cp "$OUT/data.json" "$GITHUB_WORKSPACE/regen-json/${{ matrix.pack }}/"
+          cp -r "$OUT/browser" "$GITHUB_WORKSPACE/regen-json/${{ matrix.pack }}/"
+          cp data/output/packs.json "$GITHUB_WORKSPACE/regen-json/"
+          # Refresh the texture dir from the regenerated output.
+          rm -rf "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}"
+          mkdir -p "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}"
+          find "$OUT" -maxdepth 1 -type d -name '__*__' -exec cp -r {} "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/" \;
+          cp "$OUT/metadata.json" "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/" 2>/dev/null || true
+          cd "$GITHUB_WORKSPACE"
+          if ! diff -r "packs/${{ matrix.pack }}/browser" "regen-json/${{ matrix.pack }}/browser" > /dev/null 2>&1 \
+             || ! diff -q "packs/${{ matrix.pack }}/data.json" "regen-json/${{ matrix.pack }}/data.json" > /dev/null 2>&1; then
+            echo "drift=true" >> "$GITHUB_ENV"
+          fi
+
+      - name: Upload regenerated JSON (drift)
+        if: steps.source.outputs.mode == 'regen'
+        uses: actions/upload-artifact@v4
+        with:
+          name: regen-json-${{ matrix.pack }}
+          path: regen-json
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Fail on JSON drift
+        if: env.drift == 'true'
+        run: |
+          echo "::error::Regenerated JSON tiers differ from the committed packs/${{ matrix.pack }} — download the regen-json-${{ matrix.pack }} artifact, commit it, and re-run."
+          exit 1
+
+      - name: Save textures to cache
+        if: steps.source.outputs.mode != 'cache'
+        uses: actions/cache/save@v4
+        with:
+          path: textures/${{ matrix.pack }}
+          key: textures-${{ matrix.pack }}-${{ github.run_id }}
+
+      - name: Upload textures for the deploy job
+        uses: actions/upload-artifact@v4
+        with:
+          name: textures-${{ matrix.pack }}
+          path: textures/${{ matrix.pack }}
+          retention-days: 1
+          compression-level: 0 # .basis is already compressed
+
+  deploy:
+    needs: textures
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download textures
+        uses: actions/download-artifact@v4
+        with:
+          pattern: textures-*
+          path: textures
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp packs/packs.json _site/
+          for p in vanilla-2.0 space-age space-exploration; do
+            mkdir -p "_site/$p"
+            cp "packs/$p/data.json" "_site/$p/"
+            cp -r "packs/$p/browser" "_site/$p/"
+            cp -r "textures/textures-$p/." "_site/$p/"
+            rm -f "_site/$p/metadata.json" # exporter's incremental cache, not served
+          done
+          echo "Site: $(du -sh _site | cut -f1), $(find _site -type f | wc -l) files"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
