@@ -1,11 +1,16 @@
 # Publishes the whole data plane to GitHub Pages: the committed JSON tiers
-# (packs/) plus the per-pack .basis texture atlases, which are NEVER committed
+# (packs/) plus the per-pack .basis texture sets, which are NEVER committed
 # here. Textures are sourced per pack, in order of preference:
 #   1. the Actions cache (saved by any previous run);
-#   2. bootstrap from the fbe repo's committed copy (transition path — goes
-#      away once fbe evicts its data/output textures);
-#   3. full regeneration via the fbe exporter (workflow_dispatch with
-#      `regenerate`; needs FACTORIO_USERNAME / FACTORIO_TOKEN secrets).
+#   2. bootstrap from the fbe repo's pinned pre-eviction commit (full packs
+#      only — slim variants never existed there);
+#   3. regeneration:
+#      - full packs: the fbe exporter's dump pipeline (workflow_dispatch with
+#        `regenerate`; needs FACTORIO_USERNAME / FACTORIO_TOKEN secrets);
+#      - slim variants (graphics-only, `<base>-slim`): the fbe exporter's
+#        --slim pipeline — census rect report over the BASE pack's committed
+#        data.json, then crop + downscale of the source PNGs (needs the same
+#        secrets, for the Factorio download only).
 # Regeneration also rebuilds the JSON tiers and FAILS the run if they drift
 # from the committed ones (regenerated JSON is uploaded as an artifact to
 # commit), so the published site can never mix mismatched JSON and textures.
@@ -20,7 +25,8 @@ on:
         description: "Regenerate pack(s) with the exporter (needs secrets)"
         type: choice
         default: none
-        options: [none, all, vanilla-2.0, space-age, space-exploration]
+        options:
+          [none, all, vanilla-2.0, space-age, space-exploration, vanilla-2.0-slim]
 
 # One deploy at a time; a new push supersedes a queued one but never cancels
 # a running deploy mid-publish.
@@ -35,9 +41,12 @@ permissions:
 
 env:
   FBE_REPO: trisiak/factorio-blueprint-editor
+  # The exporter/editor ref the regeneration paths build from.
+  # TODO: flip to `master` once fbe#83 (slim exporter + rect report) merges.
+  FBE_REF: claude/fib-data-hosting-bv87mv
   # The last fbe commit that still carries data/output textures. The bootstrap
-  # path fetches THIS SHA (git history keeps the blobs even after fbe evicts
-  # the files from its tree), so the site stays rebuildable without secrets
+  # path fetches THIS SHA (git history keeps the blobs even after fbe evicted
+  # the files from its tree), so full packs stay rebuildable without secrets
   # even if the Actions cache evicts. Regeneration is the forward path.
   FBE_BOOTSTRAP_SHA: 2849afc9938aef802af656ecfcaf2fc1b27289e1
 
@@ -46,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        pack: [vanilla-2.0, space-age, space-exploration]
+        pack: [vanilla-2.0, space-age, space-exploration, vanilla-2.0-slim]
     steps:
       - uses: actions/checkout@v4
 
@@ -66,10 +75,18 @@ jobs:
         id: source
         run: |
           REGEN="${{ github.event.inputs.regenerate || 'none' }}"
+          case "${{ matrix.pack }}" in *-slim) SLIM=1 ;; *) SLIM=0 ;; esac
           if [ "$REGEN" = "all" ] || [ "$REGEN" = "${{ matrix.pack }}" ]; then
-            echo "mode=regen" >> "$GITHUB_OUTPUT"
+            if [ "$SLIM" = 1 ]; then echo "mode=slim" >> "$GITHUB_OUTPUT"; else echo "mode=regen" >> "$GITHUB_OUTPUT"; fi
           elif [ -d "textures/${{ matrix.pack }}" ] && [ -n "$(find textures/${{ matrix.pack }} -name '*.basis' -print -quit)" ]; then
             echo "mode=cache" >> "$GITHUB_OUTPUT"
+          elif [ "$SLIM" = 1 ]; then
+            # Slim variants have no bootstrap (they never existed in fbe's
+            # history). With no cache and no rebuild requested, skip the pack —
+            # the deploy job drops it from the served manifest until someone
+            # dispatches regenerate=${{ matrix.pack }}.
+            echo "::warning::no cached textures for ${{ matrix.pack }} — pack will be omitted; dispatch regenerate=${{ matrix.pack }} to build it"
+            echo "mode=skip" >> "$GITHUB_OUTPUT"
           else
             echo "mode=bootstrap" >> "$GITHUB_OUTPUT"
           fi
@@ -83,9 +100,9 @@ jobs:
           git -C fbe-data fetch -q --depth 1 --filter=blob:none origin "$FBE_BOOTSTRAP_SHA"
           git -C fbe-data checkout -q FETCH_HEAD
           SRC="fbe-data/packages/exporter/data/output/${{ matrix.pack }}"
-          [ -d "$SRC" ] || { echo "::error::pack '${{ matrix.pack }}' not found in $FBE_REPO"; exit 1; }
+          [ -d "$SRC" ] || { echo "::error::pack '${{ matrix.pack }}' not found at the bootstrap SHA"; exit 1; }
           mkdir -p "textures/${{ matrix.pack }}"
-          # Texture atlas = the per-mod __<mod>__/ dirs (+ metadata.json, the
+          # Texture set = the per-mod __<mod>__/ dirs (+ metadata.json, the
           # exporter's incremental cache — kept with the textures so a later
           # regen can skip unchanged sprites; excluded from the site).
           find "$SRC" -maxdepth 1 -type d -name '__*__' -exec cp -r {} "textures/${{ matrix.pack }}/" \;
@@ -105,7 +122,7 @@ jobs:
           [ -n "$FACTORIO_USERNAME" ] && [ -n "$FACTORIO_TOKEN" ] || {
             echo "::error::FACTORIO_USERNAME / FACTORIO_TOKEN secrets are required for regeneration"; exit 1; }
           sudo apt-get update -q && sudo apt-get install -y -q xvfb
-          git clone --depth 1 "https://github.com/$FBE_REPO" fbe
+          git clone -q --depth 1 --branch "$FBE_REF" "https://github.com/$FBE_REPO" fbe
           cd fbe/packages/exporter
           printf 'FACTORIO_USERNAME=%s\nFACTORIO_TOKEN=%s\n' "$FACTORIO_USERNAME" "$FACTORIO_TOKEN" > .env
           # The manifest of record is THIS repo's.
@@ -117,41 +134,22 @@ jobs:
             mkdir -p "data/output/${{ matrix.pack }}"
             cp -r "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/." "data/output/${{ matrix.pack }}/"
           fi
-          # The exporter ends in a serve loop and never exits: poll for the
-          # manifest update (its final step) and tear the process tree down.
-          xvfb-run -a cargo run --release -- --pack "${{ matrix.pack }}" > run.log 2>&1 &
-          RUN_PID=$!
-          BEFORE=$(python3 -c "import json;print(next(p for p in json.load(open('data/output/packs.json')) if p['id']=='${{ matrix.pack }}').get('generated','none'))")
-          DONE=0
-          for i in $(seq 1 2000); do
-            sleep 10
-            NOW=$(python3 -c "import json;print(next(p for p in json.load(open('data/output/packs.json')) if p['id']=='${{ matrix.pack }}').get('generated','none'))" 2>/dev/null || echo "$BEFORE")
-            if [ "$NOW" != "$BEFORE" ]; then DONE=1; break; fi
-            kill -0 "$RUN_PID" 2>/dev/null || break
-          done
-          pkill -P "$RUN_PID" 2>/dev/null || true; kill "$RUN_PID" 2>/dev/null || true
-          pkill -f 'bin/x64/factorio' 2>/dev/null || true
-          [ "$DONE" = 1 ] || { echo "::error::exporter did not complete"; tail -50 run.log; exit 1; }
-          tail -20 run.log
-          # Drift check: the regenerated JSON tiers must match the committed
-          # ones, or the deploy stops and the fresh JSON is offered to commit.
+          xvfb-run -a cargo run --release -- --pack "${{ matrix.pack }}" --exit
+          # Collect outputs for the drift check + the deploy job.
           OUT="data/output/${{ matrix.pack }}"
           mkdir -p "$GITHUB_WORKSPACE/regen-json/${{ matrix.pack }}"
           cp "$OUT/data.json" "$GITHUB_WORKSPACE/regen-json/${{ matrix.pack }}/"
           cp -r "$OUT/browser" "$GITHUB_WORKSPACE/regen-json/${{ matrix.pack }}/"
           cp data/output/packs.json "$GITHUB_WORKSPACE/regen-json/"
-          # Refresh the texture dir from the regenerated output.
           rm -rf "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}"
           mkdir -p "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}"
           find "$OUT" -maxdepth 1 -type d -name '__*__' -exec cp -r {} "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/" \;
           cp "$OUT/metadata.json" "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/" 2>/dev/null || true
           cd "$GITHUB_WORKSPACE"
-          # Content drift check, JSON-aware: catalog.json embeds a `generated`
-          # timestamp (always differs on regen — not drift), and the icon
-          # sheet's bytes may vary across renderer/mesa versions without being
-          # wrong (the COMMITTED sheet+rects pair is what gets served, and it
-          # stays self-coherent) — so icons only warn. data.json and the
-          # catalog content hard-fail.
+          # JSON-aware compare: catalog.json embeds a `generated` timestamp
+          # (always differs on regen — not drift), and the icon sheet's bytes
+          # may vary across renderer/mesa versions without being wrong (the
+          # COMMITTED sheet+rects pair is what gets served) — icons warn only.
           python3 - "packs/${{ matrix.pack }}" "regen-json/${{ matrix.pack }}" <<'PY' || echo "drift=true" >> "$GITHUB_ENV"
           import json, sys, filecmp
           committed, regen = sys.argv[1], sys.argv[2]
@@ -172,8 +170,59 @@ jobs:
           sys.exit(0 if ok else 1)
           PY
 
+      - name: Build slim variant with the fbe exporter
+        if: steps.source.outputs.mode == 'slim'
+        env:
+          # Secrets are needed only for the Factorio download (source PNGs).
+          # Same handling rules as above: both values masked, never echoed.
+          FACTORIO_USERNAME: ${{ secrets.FACTORIO_USERNAME }}
+          FACTORIO_TOKEN: ${{ secrets.FACTORIO_TOKEN }}
+        run: |
+          [ -n "$FACTORIO_USERNAME" ] && [ -n "$FACTORIO_TOKEN" ] || {
+            echo "::error::FACTORIO_USERNAME / FACTORIO_TOKEN secrets are required (Factorio download)"; exit 1; }
+          BASE="${{ matrix.pack }}"; BASE="${BASE%-slim}"
+          git clone -q --depth 1 --branch "$FBE_REF" "https://github.com/$FBE_REPO" fbe
+          cd fbe
+          # Rect report: the census enumeration over the BASE pack's committed
+          # data.json, using the same editor code that renders it.
+          npm install --legacy-peer-deps --no-audit --no-fund
+          mkdir -p "packages/exporter/data/output/$BASE"
+          cp "$GITHUB_WORKSPACE/packs/packs.json" packages/exporter/data/output/packs.json
+          cp "$GITHUB_WORKSPACE/packs/$BASE/data.json" "packages/exporter/data/output/$BASE/data.json"
+          npm run rect-report -- "$BASE" /tmp/rect-report.json
+          # Source PNGs: ensure the Factorio install, then build the variant.
+          cd packages/exporter
+          printf 'FACTORIO_USERNAME=%s\nFACTORIO_TOKEN=%s\n' "$FACTORIO_USERNAME" "$FACTORIO_TOKEN" > .env
+          cargo run --release -- --pack "$BASE" --download-only
+          # Seed the incremental cache from restored textures, if any.
+          if [ -d "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}" ]; then
+            mkdir -p "data/output/${{ matrix.pack }}"
+            cp -r "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/." "data/output/${{ matrix.pack }}/"
+          fi
+          cargo run --release -- --pack "$BASE" --slim /tmp/rect-report.json --exit
+          OUT="data/output/${{ matrix.pack }}"
+          # Drift check: data.json must be byte-identical to the committed base
+          # copy; textures.json must match the committed sidecar (JSON compare).
+          mkdir -p "$GITHUB_WORKSPACE/regen-json/${{ matrix.pack }}"
+          cp "$OUT/data.json" "$OUT/textures.json" "$GITHUB_WORKSPACE/regen-json/${{ matrix.pack }}/"
+          rm -rf "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}"
+          mkdir -p "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}"
+          find "$OUT" -maxdepth 1 -type d -name '__*__' -exec cp -r {} "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/" \;
+          cp "$OUT/metadata.json" "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/" 2>/dev/null || true
+          cd "$GITHUB_WORKSPACE"
+          python3 - "packs/${{ matrix.pack }}" "regen-json/${{ matrix.pack }}" <<'PY' || echo "drift=true" >> "$GITHUB_ENV"
+          import json, sys
+          committed, regen = sys.argv[1], sys.argv[2]
+          ok = True
+          if open(f"{committed}/data.json", "rb").read() != open(f"{regen}/data.json", "rb").read():
+              print("::error::slim data.json is not byte-identical to the committed one"); ok = False
+          if json.load(open(f"{committed}/textures.json")) != json.load(open(f"{regen}/textures.json")):
+              print("::error::textures.json drifted from the committed sidecar"); ok = False
+          sys.exit(0 if ok else 1)
+          PY
+
       - name: Upload regenerated JSON (drift)
-        if: steps.source.outputs.mode == 'regen'
+        if: steps.source.outputs.mode == 'regen' || steps.source.outputs.mode == 'slim'
         uses: actions/upload-artifact@v4
         with:
           name: regen-json-${{ matrix.pack }}
@@ -188,13 +237,14 @@ jobs:
           exit 1
 
       - name: Save textures to cache
-        if: steps.source.outputs.mode != 'cache'
+        if: steps.source.outputs.mode != 'cache' && steps.source.outputs.mode != 'skip'
         uses: actions/cache/save@v4
         with:
           path: textures/${{ matrix.pack }}
           key: textures-${{ matrix.pack }}-${{ github.run_id }}
 
       - name: Upload textures for the deploy job
+        if: steps.source.outputs.mode != 'skip'
         uses: actions/upload-artifact@v4
         with:
           name: textures-${{ matrix.pack }}
@@ -220,14 +270,33 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site
-          cp packs/packs.json _site/
-          for p in vanilla-2.0 space-age space-exploration; do
+          # Driven by the manifest: every pack ships its committed JSON tiers
+          # (data.json, optional textures.json sidecar, optional browser/)
+          # plus the texture set from its build artifact. A pack whose texture
+          # artifact is absent (a skipped, never-built slim variant) is dropped
+          # from the SERVED manifest so consumers never see a broken entry.
+          SERVED=""
+          for p in $(python3 -c "import json; print(' '.join(e['id'] for e in json.load(open('packs/packs.json'))))"); do
+            if [ ! -d "textures/textures-$p" ]; then
+              echo "::warning::omitting pack '$p' — no texture artifact in this run"
+              continue
+            fi
+            SERVED="$SERVED $p"
             mkdir -p "_site/$p"
             cp "packs/$p/data.json" "_site/$p/"
-            cp -r "packs/$p/browser" "_site/$p/"
+            [ -f "packs/$p/textures.json" ] && cp "packs/$p/textures.json" "_site/$p/"
+            [ -d "packs/$p/browser" ] && cp -r "packs/$p/browser" "_site/$p/"
             cp -r "textures/textures-$p/." "_site/$p/"
             rm -f "_site/$p/metadata.json" # exporter's incremental cache, not served
           done
+          python3 - $SERVED <<'PY'
+          import json, sys
+          served = set(sys.argv[1:])
+          packs = [p for p in json.load(open('packs/packs.json')) if p['id'] in served]
+          with open('_site/packs.json', 'w') as f:
+              json.dump(packs, f, indent=4)
+              f.write('\n')
+          PY
           echo "Site: $(du -sh _site | cut -f1), $(find _site -type f | wc -l) files"
 
       - name: Configure Pages

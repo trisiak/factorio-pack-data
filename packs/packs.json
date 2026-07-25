@@ -113,5 +113,18 @@
         ],
         "browserSchemaVersion": 1,
         "generated": "2026-07-24T17:48:08Z"
+    },
+    {
+        "id": "vanilla-2.0-slim",
+        "label": "Vanilla 2.0 (slim)",
+        "factorioVersion": "2.0",
+        "mods": [
+            "base"
+        ],
+        "variantOf": "vanilla-2.0",
+        "graphics": "slim",
+        "artifacts": [
+            "editor"
+        ]
     }
 ]
