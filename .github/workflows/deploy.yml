@@ -35,6 +35,11 @@ permissions:
 
 env:
   FBE_REPO: trisiak/factorio-blueprint-editor
+  # The last fbe commit that still carries data/output textures. The bootstrap
+  # path fetches THIS SHA (git history keeps the blobs even after fbe evicts
+  # the files from its tree), so the site stays rebuildable without secrets
+  # even if the Actions cache evicts. Regeneration is the forward path.
+  FBE_BOOTSTRAP_SHA: 2849afc9938aef802af656ecfcaf2fc1b27289e1
 
 jobs:
   textures:
@@ -72,8 +77,11 @@ jobs:
       - name: Bootstrap textures from the fbe repo
         if: steps.source.outputs.mode == 'bootstrap'
         run: |
-          git clone --depth 1 --filter=blob:none --sparse "https://github.com/$FBE_REPO" fbe-data
-          git -C fbe-data sparse-checkout set "packages/exporter/data/output/${{ matrix.pack }}"
+          git init -q fbe-data
+          git -C fbe-data remote add origin "https://github.com/$FBE_REPO"
+          git -C fbe-data sparse-checkout set --cone "packages/exporter/data/output/${{ matrix.pack }}"
+          git -C fbe-data fetch -q --depth 1 --filter=blob:none origin "$FBE_BOOTSTRAP_SHA"
+          git -C fbe-data checkout -q FETCH_HEAD
           SRC="fbe-data/packages/exporter/data/output/${{ matrix.pack }}"
           [ -d "$SRC" ] || { echo "::error::pack '${{ matrix.pack }}' not found in $FBE_REPO"; exit 1; }
           mkdir -p "textures/${{ matrix.pack }}"
