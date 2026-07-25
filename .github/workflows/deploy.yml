@@ -96,6 +96,9 @@ jobs:
       - name: Regenerate with the fbe exporter
         if: steps.source.outputs.mode == 'regen'
         env:
+          # BOTH values are secrets and auto-masked in logs — the username is
+          # as sensitive as the token here. Never echo them, never `cat .env`,
+          # never `set -x` in this step.
           FACTORIO_USERNAME: ${{ secrets.FACTORIO_USERNAME }}
           FACTORIO_TOKEN: ${{ secrets.FACTORIO_TOKEN }}
         run: |
@@ -143,10 +146,31 @@ jobs:
           find "$OUT" -maxdepth 1 -type d -name '__*__' -exec cp -r {} "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/" \;
           cp "$OUT/metadata.json" "$GITHUB_WORKSPACE/textures/${{ matrix.pack }}/" 2>/dev/null || true
           cd "$GITHUB_WORKSPACE"
-          if ! diff -r "packs/${{ matrix.pack }}/browser" "regen-json/${{ matrix.pack }}/browser" > /dev/null 2>&1 \
-             || ! diff -q "packs/${{ matrix.pack }}/data.json" "regen-json/${{ matrix.pack }}/data.json" > /dev/null 2>&1; then
-            echo "drift=true" >> "$GITHUB_ENV"
-          fi
+          # Content drift check, JSON-aware: catalog.json embeds a `generated`
+          # timestamp (always differs on regen — not drift), and the icon
+          # sheet's bytes may vary across renderer/mesa versions without being
+          # wrong (the COMMITTED sheet+rects pair is what gets served, and it
+          # stays self-coherent) — so icons only warn. data.json and the
+          # catalog content hard-fail.
+          python3 - "packs/${{ matrix.pack }}" "regen-json/${{ matrix.pack }}" <<'PY' || echo "drift=true" >> "$GITHUB_ENV"
+          import json, sys, filecmp
+          committed, regen = sys.argv[1], sys.argv[2]
+          def load(p, drop_generated=False):
+              with open(p) as f:
+                  data = json.load(f)
+              if drop_generated and isinstance(data, dict):
+                  data.pop("generated", None)
+              return data
+          ok = True
+          if load(f"{committed}/data.json") != load(f"{regen}/data.json"):
+              print("::error::data.json drifted"); ok = False
+          if load(f"{committed}/browser/catalog.json", True) != load(f"{regen}/browser/catalog.json", True):
+              print("::error::browser/catalog.json content drifted (generated timestamp ignored)"); ok = False
+          if load(f"{committed}/browser/icons.json") != load(f"{regen}/browser/icons.json") \
+             or not filecmp.cmp(f"{committed}/browser/icons.webp", f"{regen}/browser/icons.webp", shallow=False):
+              print("::warning::icon sheet/rects differ from committed (renderer variance is expected; commit the regen-json artifact if intended)")
+          sys.exit(0 if ok else 1)
+          PY
 
       - name: Upload regenerated JSON (drift)
         if: steps.source.outputs.mode == 'regen'
