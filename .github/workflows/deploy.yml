@@ -50,8 +50,7 @@ permissions:
 env:
   FBE_REPO: trisiak/factorio-blueprint-editor
   # The exporter/editor ref the regeneration paths build from.
-  # TODO: flip to `master` once fbe#83 (slim exporter + rect report) merges.
-  FBE_REF: claude/fib-data-hosting-bv87mv
+  FBE_REF: master
   # The last fbe commit that still carries data/output textures. The bootstrap
   # path fetches THIS SHA (git history keeps the blobs even after fbe evicted
   # the files from its tree), so full packs stay rebuildable without secrets
