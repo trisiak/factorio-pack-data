@@ -6479,15 +6479,6 @@
     ],
     "scale": 0.5
   },
-  "__base__/graphics/entity/one-way-valve/one-way-valve-east.png": {
-    "crop": [
-      0,
-      0,
-      64,
-      64
-    ],
-    "scale": 0.5
-  },
   "__base__/graphics/entity/one-way-valve/one-way-valve-north.png": {
     "crop": [
       0,
@@ -6507,15 +6498,6 @@
     "scale": 0.5
   },
   "__base__/graphics/entity/one-way-valve/one-way-valve-west.png": {
-    "crop": [
-      0,
-      0,
-      64,
-      64
-    ],
-    "scale": 0.5
-  },
-  "__base__/graphics/entity/overflow-valve/overflow-valve-east.png": {
     "crop": [
       0,
       0,
@@ -8855,15 +8837,6 @@
     ],
     "scale": 0.5
   },
-  "__base__/graphics/entity/top-up-valve/top-up-valve-east.png": {
-    "crop": [
-      0,
-      0,
-      64,
-      64
-    ],
-    "scale": 0.5
-  },
   "__base__/graphics/entity/top-up-valve/top-up-valve-north.png": {
     "crop": [
       0,
@@ -9555,7 +9528,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/active-provider-chest.png": {
     "crop": [
@@ -9564,7 +9537,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/advanced-circuit.png": {
     "crop": [
@@ -9573,7 +9546,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arithmetic-combinator.png": {
     "crop": [
@@ -9582,7 +9555,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/down-arrow.png": {
     "crop": [
@@ -9591,7 +9564,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/down-left-arrow.png": {
     "crop": [
@@ -9600,7 +9573,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/down-right-arrow.png": {
     "crop": [
@@ -9609,7 +9582,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/left-arrow.png": {
     "crop": [
@@ -9618,7 +9591,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/right-arrow.png": {
     "crop": [
@@ -9627,7 +9600,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-anticlockwise-circle-arrow.png": {
     "crop": [
@@ -9636,7 +9609,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-clockwise-circle-arrow.png": {
     "crop": [
@@ -9645,7 +9618,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-input.png": {
     "crop": [
@@ -9654,7 +9627,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-left-right-arrow.png": {
     "crop": [
@@ -9663,7 +9636,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-output.png": {
     "crop": [
@@ -9672,7 +9645,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-rightwards-leftwards-arrow.png": {
     "crop": [
@@ -9681,7 +9654,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-shuffle.png": {
     "crop": [
@@ -9690,7 +9663,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-up-down-arrow.png": {
     "crop": [
@@ -9699,7 +9672,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/signal-upwards-downwards-arrow.png": {
     "crop": [
@@ -9708,7 +9681,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/up-arrow.png": {
     "crop": [
@@ -9717,7 +9690,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/up-left-arrow.png": {
     "crop": [
@@ -9726,7 +9699,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/arrows/up-right-arrow.png": {
     "crop": [
@@ -9735,7 +9708,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/artillery-shell.png": {
     "crop": [
@@ -9744,7 +9717,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/artillery-targeting-remote.png": {
     "crop": [
@@ -9753,7 +9726,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/artillery-turret.png": {
     "crop": [
@@ -9762,7 +9735,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/artillery-wagon.png": {
     "crop": [
@@ -9771,7 +9744,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/assembling-machine-1.png": {
     "crop": [
@@ -9780,7 +9753,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/assembling-machine-2.png": {
     "crop": [
@@ -9789,7 +9762,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/assembling-machine-3.png": {
     "crop": [
@@ -9798,7 +9771,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/atomic-bomb-light.png": {
     "crop": [
@@ -9816,7 +9789,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/automation-science-pack.png": {
     "crop": [
@@ -9825,7 +9798,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/battery-equipment.png": {
     "crop": [
@@ -9834,7 +9807,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/battery-mk2-equipment.png": {
     "crop": [
@@ -9843,7 +9816,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/battery.png": {
     "crop": [
@@ -9852,7 +9825,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/beacon.png": {
     "crop": [
@@ -9861,7 +9834,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/belt-immunity-equipment.png": {
     "crop": [
@@ -9870,7 +9843,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/big-electric-pole.png": {
     "crop": [
@@ -9879,7 +9852,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/blueprint-book.png": {
     "crop": [
@@ -9888,7 +9861,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/blueprint.png": {
     "crop": [
@@ -9897,7 +9870,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/boiler.png": {
     "crop": [
@@ -9906,7 +9879,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/buffer-chest.png": {
     "crop": [
@@ -9915,7 +9888,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/bulk-inserter.png": {
     "crop": [
@@ -9924,7 +9897,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/burner-inserter.png": {
     "crop": [
@@ -9933,7 +9906,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/burner-mining-drill.png": {
     "crop": [
@@ -9942,7 +9915,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/cannon-shell.png": {
     "crop": [
@@ -9951,7 +9924,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/car.png": {
     "crop": [
@@ -9960,7 +9933,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/cargo-landing-pad.png": {
     "crop": [
@@ -9969,7 +9942,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/cargo-wagon.png": {
     "crop": [
@@ -9978,7 +9951,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/centrifuge.png": {
     "crop": [
@@ -9987,7 +9960,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/chemical-plant.png": {
     "crop": [
@@ -9996,7 +9969,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/chemical-science-pack.png": {
     "crop": [
@@ -10005,7 +9978,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/cliff-explosives.png": {
     "crop": [
@@ -10014,7 +9987,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/cluster-grenade.png": {
     "crop": [
@@ -10023,7 +9996,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/coal-1.png": {
     "crop": [
@@ -10059,7 +10032,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/coal.png": {
     "crop": [
@@ -10068,7 +10041,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/coin.png": {
     "crop": [
@@ -10077,7 +10050,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/combat-shotgun.png": {
     "crop": [
@@ -10086,7 +10059,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/concrete.png": {
     "crop": [
@@ -10095,7 +10068,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/constant-combinator.png": {
     "crop": [
@@ -10104,7 +10077,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/construction-robot.png": {
     "crop": [
@@ -10113,7 +10086,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/copper-cable.png": {
     "crop": [
@@ -10122,7 +10095,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/copper-ore-1.png": {
     "crop": [
@@ -10158,7 +10131,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/copper-plate.png": {
     "crop": [
@@ -10167,7 +10140,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/copy-paste-tool.png": {
     "crop": [
@@ -10176,7 +10149,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/crash-site-chest.png": {
     "crop": [
@@ -10185,7 +10158,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/curved-rail-b.png": {
     "crop": [
@@ -10194,7 +10167,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/curved-rail.png": {
     "crop": [
@@ -10203,7 +10176,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/cut-paste-tool.png": {
     "crop": [
@@ -10212,7 +10185,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/decider-combinator.png": {
     "crop": [
@@ -10221,7 +10194,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/deconstruction-planner.png": {
     "crop": [
@@ -10230,7 +10203,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/defender-capsule.png": {
     "crop": [
@@ -10239,7 +10212,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/depleted-uranium-fuel-cell.png": {
     "crop": [
@@ -10248,7 +10221,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/destroyer-capsule.png": {
     "crop": [
@@ -10257,7 +10230,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/discharge-defense-equipment-controller.png": {
     "crop": [
@@ -10266,7 +10239,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/discharge-defense-equipment.png": {
     "crop": [
@@ -10275,7 +10248,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/display-panel.png": {
     "crop": [
@@ -10284,7 +10257,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/distractor-capsule.png": {
     "crop": [
@@ -10293,7 +10266,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/efficiency-module-2.png": {
     "crop": [
@@ -10302,7 +10275,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/efficiency-module-3.png": {
     "crop": [
@@ -10311,7 +10284,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/efficiency-module.png": {
     "crop": [
@@ -10320,7 +10293,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/electric-engine-unit.png": {
     "crop": [
@@ -10329,7 +10302,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/electric-furnace.png": {
     "crop": [
@@ -10338,7 +10311,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/electric-mining-drill.png": {
     "crop": [
@@ -10347,7 +10320,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/electronic-circuit.png": {
     "crop": [
@@ -10356,7 +10329,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/energy-shield-equipment.png": {
     "crop": [
@@ -10365,7 +10338,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/energy-shield-mk2-equipment.png": {
     "crop": [
@@ -10374,7 +10347,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/engine-unit.png": {
     "crop": [
@@ -10383,7 +10356,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/exoskeleton-equipment.png": {
     "crop": [
@@ -10392,7 +10365,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/explosive-cannon-shell.png": {
     "crop": [
@@ -10401,7 +10374,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/explosive-rocket.png": {
     "crop": [
@@ -10410,7 +10383,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/explosive-uranium-cannon-shell.png": {
     "crop": [
@@ -10419,7 +10392,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/explosives.png": {
     "crop": [
@@ -10428,7 +10401,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/express-loader.png": {
     "crop": [
@@ -10437,7 +10410,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/express-splitter.png": {
     "crop": [
@@ -10446,7 +10419,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/express-transport-belt.png": {
     "crop": [
@@ -10455,7 +10428,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/express-underground-belt.png": {
     "crop": [
@@ -10464,7 +10437,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/factorio-logo-11tiles.png": {
     "crop": [
@@ -10473,7 +10446,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/factorio-logo-16tiles.png": {
     "crop": [
@@ -10482,7 +10455,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/factorio-logo-22tiles.png": {
     "crop": [
@@ -10491,7 +10464,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fast-inserter.png": {
     "crop": [
@@ -10500,7 +10473,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fast-loader.png": {
     "crop": [
@@ -10509,7 +10482,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fast-splitter.png": {
     "crop": [
@@ -10518,7 +10491,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fast-transport-belt.png": {
     "crop": [
@@ -10527,7 +10500,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fast-underground-belt.png": {
     "crop": [
@@ -10536,7 +10509,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/firearm-magazine.png": {
     "crop": [
@@ -10545,7 +10518,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fish.png": {
     "crop": [
@@ -10554,7 +10527,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fission-reactor-equipment.png": {
     "crop": [
@@ -10563,7 +10536,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/flamethrower-ammo.png": {
     "crop": [
@@ -10572,7 +10545,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/flamethrower-turret.png": {
     "crop": [
@@ -10581,7 +10554,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/flamethrower.png": {
     "crop": [
@@ -10590,7 +10563,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid-wagon.png": {
     "crop": [
@@ -10599,7 +10572,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/advanced-oil-processing.png": {
     "crop": [
@@ -10608,7 +10581,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/barrel-empty-side-mask.png": {
     "crop": [
@@ -10617,7 +10590,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/barrel-empty-top-mask.png": {
     "crop": [
@@ -10626,7 +10599,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/barrel-empty.png": {
     "crop": [
@@ -10635,7 +10608,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/barrel-fill-side-mask.png": {
     "crop": [
@@ -10644,7 +10617,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/barrel-fill-top-mask.png": {
     "crop": [
@@ -10653,7 +10626,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/barrel-fill.png": {
     "crop": [
@@ -10662,7 +10635,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/barrel-hoop-top-mask.png": {
     "crop": [
@@ -10671,7 +10644,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/barrel-side-mask.png": {
     "crop": [
@@ -10680,7 +10653,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/barreling/empty-barrel.png": {
     "crop": [
@@ -10689,7 +10662,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/basic-oil-processing.png": {
     "crop": [
@@ -10698,7 +10671,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/coal-liquefaction.png": {
     "crop": [
@@ -10707,7 +10680,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/crude-oil.png": {
     "crop": [
@@ -10716,7 +10689,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/heavy-oil-cracking.png": {
     "crop": [
@@ -10725,7 +10698,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/heavy-oil.png": {
     "crop": [
@@ -10734,7 +10707,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/light-oil-cracking.png": {
     "crop": [
@@ -10743,7 +10716,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/light-oil.png": {
     "crop": [
@@ -10752,7 +10725,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/lubricant.png": {
     "crop": [
@@ -10761,7 +10734,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/petroleum-gas.png": {
     "crop": [
@@ -10770,7 +10743,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/steam.png": {
     "crop": [
@@ -10779,7 +10752,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/sulfuric-acid.png": {
     "crop": [
@@ -10788,7 +10761,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/fluid/water.png": {
     "crop": [
@@ -10797,7 +10770,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/flying-robot-frame.png": {
     "crop": [
@@ -10806,7 +10779,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/gate.png": {
     "crop": [
@@ -10815,7 +10788,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/grenade.png": {
     "crop": [
@@ -10824,7 +10797,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/gun-turret.png": {
     "crop": [
@@ -10833,7 +10806,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/half-diagonal-rail.png": {
     "crop": [
@@ -10842,7 +10815,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/hazard-concrete.png": {
     "crop": [
@@ -10851,7 +10824,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/heat-boiler.png": {
     "crop": [
@@ -10860,7 +10833,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/heat-interface.png": {
     "crop": [
@@ -10869,7 +10842,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/heat-pipe.png": {
     "crop": [
@@ -10878,7 +10851,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/heavy-armor.png": {
     "crop": [
@@ -10887,7 +10860,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/infinity-chest.png": {
     "crop": [
@@ -10896,7 +10869,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/info.png": {
     "crop": [
@@ -10905,7 +10878,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/inserter.png": {
     "crop": [
@@ -10914,7 +10887,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/iron-chest.png": {
     "crop": [
@@ -10923,7 +10896,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/iron-gear-wheel.png": {
     "crop": [
@@ -10932,7 +10905,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/iron-ore-1.png": {
     "crop": [
@@ -10968,7 +10941,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/iron-plate.png": {
     "crop": [
@@ -10977,7 +10950,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/iron-stick.png": {
     "crop": [
@@ -10986,7 +10959,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/kovarex-enrichment-process.png": {
     "crop": [
@@ -10995,7 +10968,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/lab.png": {
     "crop": [
@@ -11004,7 +10977,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/land-mine.png": {
     "crop": [
@@ -11013,7 +10986,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/landed-cargo-pod.png": {
     "crop": [
@@ -11022,7 +10995,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/landfill.png": {
     "crop": [
@@ -11031,7 +11004,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/laser-turret.png": {
     "crop": [
@@ -11040,7 +11013,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/legacy-curved-rail.png": {
     "crop": [
@@ -11049,7 +11022,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/legacy-rail.png": {
     "crop": [
@@ -11058,7 +11031,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/light-armor.png": {
     "crop": [
@@ -11067,7 +11040,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/linked-belt.png": {
     "crop": [
@@ -11076,7 +11049,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/linked-chest-icon.png": {
     "crop": [
@@ -11085,7 +11058,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/list-dot.png": {
     "crop": [
@@ -11094,7 +11067,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/loader.png": {
     "crop": [
@@ -11103,7 +11076,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/locomotive.png": {
     "crop": [
@@ -11112,7 +11085,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/logistic-robot.png": {
     "crop": [
@@ -11121,7 +11094,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/logistic-science-pack.png": {
     "crop": [
@@ -11130,7 +11103,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/long-handed-inserter.png": {
     "crop": [
@@ -11139,7 +11112,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/low-density-structure.png": {
     "crop": [
@@ -11148,7 +11121,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/market.png": {
     "crop": [
@@ -11157,7 +11130,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/medium-electric-pole.png": {
     "crop": [
@@ -11166,7 +11139,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/military-science-pack.png": {
     "crop": [
@@ -11175,7 +11148,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/modular-armor.png": {
     "crop": [
@@ -11184,7 +11157,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/night-vision-equipment.png": {
     "crop": [
@@ -11193,7 +11166,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/nuclear-fuel-light.png": {
     "crop": [
@@ -11211,7 +11184,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/nuclear-fuel.png": {
     "crop": [
@@ -11220,7 +11193,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/nuclear-reactor.png": {
     "crop": [
@@ -11229,7 +11202,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/offshore-pump.png": {
     "crop": [
@@ -11238,7 +11211,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/oil-refinery.png": {
     "crop": [
@@ -11247,7 +11220,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-0.png": {
     "crop": [
@@ -11256,7 +11229,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-1.png": {
     "crop": [
@@ -11265,7 +11238,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-2.png": {
     "crop": [
@@ -11274,7 +11247,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-3.png": {
     "crop": [
@@ -11283,7 +11256,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-4.png": {
     "crop": [
@@ -11292,7 +11265,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-5.png": {
     "crop": [
@@ -11301,7 +11274,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-6.png": {
     "crop": [
@@ -11310,7 +11283,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-7.png": {
     "crop": [
@@ -11319,7 +11292,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-8.png": {
     "crop": [
@@ -11328,7 +11301,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/parameter/parameter-9.png": {
     "crop": [
@@ -11337,7 +11310,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/passive-provider-chest.png": {
     "crop": [
@@ -11346,7 +11319,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/personal-laser-defense-equipment.png": {
     "crop": [
@@ -11355,7 +11328,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/personal-roboport-equipment.png": {
     "crop": [
@@ -11364,7 +11337,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/personal-roboport-mk2-equipment.png": {
     "crop": [
@@ -11373,7 +11346,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/piercing-rounds-magazine.png": {
     "crop": [
@@ -11382,7 +11355,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/piercing-shotgun-shell.png": {
     "crop": [
@@ -11391,7 +11364,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/pipe-to-ground.png": {
     "crop": [
@@ -11400,7 +11373,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/pipe.png": {
     "crop": [
@@ -11409,7 +11382,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/pistol.png": {
     "crop": [
@@ -11418,7 +11391,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/plastic-bar.png": {
     "crop": [
@@ -11427,7 +11400,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/poison-capsule.png": {
     "crop": [
@@ -11436,7 +11409,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/power-armor-mk2.png": {
     "crop": [
@@ -11445,7 +11418,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/power-armor.png": {
     "crop": [
@@ -11454,7 +11427,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/power-switch.png": {
     "crop": [
@@ -11463,7 +11436,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/processing-unit.png": {
     "crop": [
@@ -11472,7 +11445,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/production-science-pack.png": {
     "crop": [
@@ -11481,7 +11454,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/productivity-module-2.png": {
     "crop": [
@@ -11490,7 +11463,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/productivity-module-3.png": {
     "crop": [
@@ -11499,7 +11472,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/productivity-module.png": {
     "crop": [
@@ -11508,7 +11481,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/programmable-speaker.png": {
     "crop": [
@@ -11517,7 +11490,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/pump.png": {
     "crop": [
@@ -11526,7 +11499,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/pumpjack.png": {
     "crop": [
@@ -11535,7 +11508,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/radar.png": {
     "crop": [
@@ -11544,7 +11517,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/rail-chain-signal.png": {
     "crop": [
@@ -11553,7 +11526,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/rail-signal.png": {
     "crop": [
@@ -11562,7 +11535,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/rail.png": {
     "crop": [
@@ -11571,7 +11544,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/refined-concrete.png": {
     "crop": [
@@ -11580,7 +11553,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/refined-hazard-concrete.png": {
     "crop": [
@@ -11589,7 +11562,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/repair-pack.png": {
     "crop": [
@@ -11598,7 +11571,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/requester-chest.png": {
     "crop": [
@@ -11607,7 +11580,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/roboport.png": {
     "crop": [
@@ -11616,7 +11589,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/rocket-fuel.png": {
     "crop": [
@@ -11625,7 +11598,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/rocket-launcher.png": {
     "crop": [
@@ -11634,7 +11607,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/rocket-part.png": {
     "crop": [
@@ -11643,7 +11616,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/rocket-silo.png": {
     "crop": [
@@ -11652,7 +11625,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/rocket.png": {
     "crop": [
@@ -11661,7 +11634,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/satellite.png": {
     "crop": [
@@ -11670,7 +11643,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/science.png": {
     "crop": [
@@ -11679,7 +11652,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/selector-combinator.png": {
     "crop": [
@@ -11688,7 +11661,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-circle.png": {
     "crop": [
@@ -11697,7 +11670,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-corner-2.png": {
     "crop": [
@@ -11706,7 +11679,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-corner-3.png": {
     "crop": [
@@ -11715,7 +11688,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-corner-4.png": {
     "crop": [
@@ -11724,7 +11697,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-corner.png": {
     "crop": [
@@ -11733,7 +11706,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-cross.png": {
     "crop": [
@@ -11742,7 +11715,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-curve-2.png": {
     "crop": [
@@ -11751,7 +11724,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-curve-3.png": {
     "crop": [
@@ -11760,7 +11733,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-curve-4.png": {
     "crop": [
@@ -11769,7 +11742,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-curve.png": {
     "crop": [
@@ -11778,7 +11751,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-diagonal-2.png": {
     "crop": [
@@ -11787,7 +11760,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-diagonal-cross.png": {
     "crop": [
@@ -11796,7 +11769,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-diagonal.png": {
     "crop": [
@@ -11805,7 +11778,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-horizontal.png": {
     "crop": [
@@ -11814,7 +11787,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-t-2.png": {
     "crop": [
@@ -11823,7 +11796,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-t-3.png": {
     "crop": [
@@ -11832,7 +11805,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-t-4.png": {
     "crop": [
@@ -11841,7 +11814,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-t.png": {
     "crop": [
@@ -11850,7 +11823,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shapes/shape-vertical.png": {
     "crop": [
@@ -11859,7 +11832,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shortcut-toolbar/mip/new-copper-wire-x56.png": {
     "crop": [
@@ -11868,7 +11841,7 @@
       56,
       56
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shortcut-toolbar/mip/new-green-wire-x56.png": {
     "crop": [
@@ -11877,7 +11850,7 @@
       56,
       56
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shortcut-toolbar/mip/new-red-wire-x56.png": {
     "crop": [
@@ -11886,7 +11859,7 @@
       56,
       56
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shotgun-shell.png": {
     "crop": [
@@ -11895,7 +11868,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/shotgun.png": {
     "crop": [
@@ -11904,7 +11877,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-alarm.png": {
     "crop": [
@@ -11913,7 +11886,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-alert.png": {
     "crop": [
@@ -11922,7 +11895,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-ampersand.png": {
     "crop": [
@@ -11931,7 +11904,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-apostrophe.png": {
     "crop": [
@@ -11940,7 +11913,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-battery-full.png": {
     "crop": [
@@ -11949,7 +11922,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-battery-low.png": {
     "crop": [
@@ -11958,7 +11931,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-battery-mid-level.png": {
     "crop": [
@@ -11967,7 +11940,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-checked-green.png": {
     "crop": [
@@ -11976,7 +11949,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-circumflex-accent.png": {
     "crop": [
@@ -11985,7 +11958,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-clock.png": {
     "crop": [
@@ -11994,7 +11967,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-colon.png": {
     "crop": [
@@ -12003,7 +11976,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-comma.png": {
     "crop": [
@@ -12012,7 +11985,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-damage.png": {
     "crop": [
@@ -12021,7 +11994,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-deny.png": {
     "crop": [
@@ -12030,7 +12003,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-division.png": {
     "crop": [
@@ -12039,7 +12012,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-equal.png": {
     "crop": [
@@ -12048,7 +12021,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-exclamation-mark.png": {
     "crop": [
@@ -12057,7 +12030,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-explosion.png": {
     "crop": [
@@ -12066,7 +12039,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-fire.png": {
     "crop": [
@@ -12075,7 +12048,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-fluid-parameter.png": {
     "crop": [
@@ -12084,7 +12057,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-fuel-parameter.png": {
     "crop": [
@@ -12093,7 +12066,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-fuel.png": {
     "crop": [
@@ -12102,7 +12075,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-ghost.png": {
     "crop": [
@@ -12111,7 +12084,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-greater-than-or-equal-to.png": {
     "crop": [
@@ -12120,7 +12093,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-greater-than.png": {
     "crop": [
@@ -12129,7 +12102,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-heart.png": {
     "crop": [
@@ -12138,7 +12111,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-hourglass.png": {
     "crop": [
@@ -12147,7 +12120,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-item-parameter.png": {
     "crop": [
@@ -12156,7 +12129,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-left-parenthesis.png": {
     "crop": [
@@ -12165,7 +12138,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-left-square-bracket.png": {
     "crop": [
@@ -12174,7 +12147,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-less-than-or-equal-to.png": {
     "crop": [
@@ -12183,7 +12156,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-less-than.png": {
     "crop": [
@@ -12192,7 +12165,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-letter-dot.png": {
     "crop": [
@@ -12201,7 +12174,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-lightning.png": {
     "crop": [
@@ -12210,7 +12183,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-liquid.png": {
     "crop": [
@@ -12219,7 +12192,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-lock.png": {
     "crop": [
@@ -12228,7 +12201,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-map-marker.png": {
     "crop": [
@@ -12237,7 +12210,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-mining.png": {
     "crop": [
@@ -12246,7 +12219,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-minus.png": {
     "crop": [
@@ -12255,7 +12228,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-moon.png": {
     "crop": [
@@ -12264,7 +12237,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-multiplication.png": {
     "crop": [
@@ -12273,7 +12246,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-no-entry.png": {
     "crop": [
@@ -12282,7 +12255,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-not-equal.png": {
     "crop": [
@@ -12291,7 +12264,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-number-sign.png": {
     "crop": [
@@ -12300,7 +12273,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-percent.png": {
     "crop": [
@@ -12309,7 +12282,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-plus.png": {
     "crop": [
@@ -12318,7 +12291,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-question-mark.png": {
     "crop": [
@@ -12327,7 +12300,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-quotation-mark.png": {
     "crop": [
@@ -12336,7 +12309,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-radioactivity.png": {
     "crop": [
@@ -12345,7 +12318,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-recycle.png": {
     "crop": [
@@ -12354,7 +12327,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-right-parenthesis.png": {
     "crop": [
@@ -12363,7 +12336,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-right-square-bracket.png": {
     "crop": [
@@ -12372,7 +12345,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-science-pack.png": {
     "crop": [
@@ -12381,7 +12354,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-signal-parameter.png": {
     "crop": [
@@ -12390,7 +12363,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-skull.png": {
     "crop": [
@@ -12399,7 +12372,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-slash.png": {
     "crop": [
@@ -12408,7 +12381,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-snowflake.png": {
     "crop": [
@@ -12417,7 +12390,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-speed.png": {
     "crop": [
@@ -12426,7 +12399,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-stack-size.png": {
     "crop": [
@@ -12435,7 +12408,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-star.png": {
     "crop": [
@@ -12444,7 +12417,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-sun.png": {
     "crop": [
@@ -12453,7 +12426,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-thermometer-blue.png": {
     "crop": [
@@ -12462,7 +12435,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-thermometer-red.png": {
     "crop": [
@@ -12471,7 +12444,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-trash-bin.png": {
     "crop": [
@@ -12480,7 +12453,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-unlock.png": {
     "crop": [
@@ -12489,7 +12462,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-weapon.png": {
     "crop": [
@@ -12498,7 +12471,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal-white-flag.png": {
     "crop": [
@@ -12507,7 +12480,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_0.png": {
     "crop": [
@@ -12516,7 +12489,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_1.png": {
     "crop": [
@@ -12525,7 +12498,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_2.png": {
     "crop": [
@@ -12534,7 +12507,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_3.png": {
     "crop": [
@@ -12543,7 +12516,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_4.png": {
     "crop": [
@@ -12552,7 +12525,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_5.png": {
     "crop": [
@@ -12561,7 +12534,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_6.png": {
     "crop": [
@@ -12570,7 +12543,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_7.png": {
     "crop": [
@@ -12579,7 +12552,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_8.png": {
     "crop": [
@@ -12588,7 +12561,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_9.png": {
     "crop": [
@@ -12597,7 +12570,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_A.png": {
     "crop": [
@@ -12606,7 +12579,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_B.png": {
     "crop": [
@@ -12615,7 +12588,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_C.png": {
     "crop": [
@@ -12624,7 +12597,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_D.png": {
     "crop": [
@@ -12633,7 +12606,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_E.png": {
     "crop": [
@@ -12642,7 +12615,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_F.png": {
     "crop": [
@@ -12651,7 +12624,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_G.png": {
     "crop": [
@@ -12660,7 +12633,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_H.png": {
     "crop": [
@@ -12669,7 +12642,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_I.png": {
     "crop": [
@@ -12678,7 +12651,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_J.png": {
     "crop": [
@@ -12687,7 +12660,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_K.png": {
     "crop": [
@@ -12696,7 +12669,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_L.png": {
     "crop": [
@@ -12705,7 +12678,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_M.png": {
     "crop": [
@@ -12714,7 +12687,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_N.png": {
     "crop": [
@@ -12723,7 +12696,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_O.png": {
     "crop": [
@@ -12732,7 +12705,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_P.png": {
     "crop": [
@@ -12741,7 +12714,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_Q.png": {
     "crop": [
@@ -12750,7 +12723,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_R.png": {
     "crop": [
@@ -12759,7 +12732,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_S.png": {
     "crop": [
@@ -12768,7 +12741,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_T.png": {
     "crop": [
@@ -12777,7 +12750,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_U.png": {
     "crop": [
@@ -12786,7 +12759,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_V.png": {
     "crop": [
@@ -12795,7 +12768,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_W.png": {
     "crop": [
@@ -12804,7 +12777,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_X.png": {
     "crop": [
@@ -12813,7 +12786,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_Y.png": {
     "crop": [
@@ -12822,7 +12795,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_Z.png": {
     "crop": [
@@ -12831,7 +12804,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_anything.png": {
     "crop": [
@@ -12840,7 +12813,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_black.png": {
     "crop": [
@@ -12849,7 +12822,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_blue.png": {
     "crop": [
@@ -12858,7 +12831,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_cyan.png": {
     "crop": [
@@ -12867,7 +12840,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_each.png": {
     "crop": [
@@ -12876,7 +12849,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_everything.png": {
     "crop": [
@@ -12885,7 +12858,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_green.png": {
     "crop": [
@@ -12894,7 +12867,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_grey.png": {
     "crop": [
@@ -12903,7 +12876,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_pink.png": {
     "crop": [
@@ -12912,7 +12885,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_red.png": {
     "crop": [
@@ -12921,7 +12894,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_white.png": {
     "crop": [
@@ -12930,7 +12903,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/signal/signal_yellow.png": {
     "crop": [
@@ -12939,7 +12912,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/slowdown-capsule.png": {
     "crop": [
@@ -12948,7 +12921,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/small-electric-pole.png": {
     "crop": [
@@ -12957,7 +12930,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/small-lamp.png": {
     "crop": [
@@ -12966,7 +12939,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/solar-panel-equipment.png": {
     "crop": [
@@ -12975,7 +12948,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/solar-panel.png": {
     "crop": [
@@ -12984,7 +12957,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/solid-fuel-from-heavy-oil.png": {
     "crop": [
@@ -12993,7 +12966,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/solid-fuel-from-light-oil.png": {
     "crop": [
@@ -13002,7 +12975,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/solid-fuel-from-petroleum-gas.png": {
     "crop": [
@@ -13011,7 +12984,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/solid-fuel.png": {
     "crop": [
@@ -13020,7 +12993,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/space-science-pack.png": {
     "crop": [
@@ -13029,7 +13002,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/speed-module-2.png": {
     "crop": [
@@ -13038,7 +13011,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/speed-module-3.png": {
     "crop": [
@@ -13047,7 +13020,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/speed-module.png": {
     "crop": [
@@ -13056,7 +13029,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/spidertron-remote-mask.png": {
     "crop": [
@@ -13074,7 +13047,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/spidertron-tintable-mask.png": {
     "crop": [
@@ -13101,7 +13074,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/splitter.png": {
     "crop": [
@@ -13110,7 +13083,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/steam-engine.png": {
     "crop": [
@@ -13119,7 +13092,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/steam-turbine.png": {
     "crop": [
@@ -13128,7 +13101,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/steel-chest.png": {
     "crop": [
@@ -13137,7 +13110,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/steel-furnace.png": {
     "crop": [
@@ -13146,7 +13119,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/steel-plate.png": {
     "crop": [
@@ -13155,7 +13128,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/stone-1.png": {
     "crop": [
@@ -13191,7 +13164,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/stone-furnace.png": {
     "crop": [
@@ -13200,7 +13173,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/stone.png": {
     "crop": [
@@ -13209,7 +13182,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/storage-chest.png": {
     "crop": [
@@ -13218,7 +13191,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/storage-tank.png": {
     "crop": [
@@ -13227,7 +13200,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/submachine-gun.png": {
     "crop": [
@@ -13236,7 +13209,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/substation.png": {
     "crop": [
@@ -13245,7 +13218,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/sulfur.png": {
     "crop": [
@@ -13254,7 +13227,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/tank-cannon.png": {
     "crop": [
@@ -13263,7 +13236,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/tank.png": {
     "crop": [
@@ -13272,7 +13245,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/train-stop.png": {
     "crop": [
@@ -13281,7 +13254,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/transport-belt.png": {
     "crop": [
@@ -13290,7 +13263,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/underground-belt.png": {
     "crop": [
@@ -13299,7 +13272,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/upgrade-planner.png": {
     "crop": [
@@ -13308,7 +13281,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/uranium-235.png": {
     "crop": [
@@ -13317,7 +13290,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/uranium-238.png": {
     "crop": [
@@ -13326,7 +13299,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/uranium-cannon-shell-light.png": {
     "crop": [
@@ -13344,7 +13317,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/uranium-fuel-cell-light.png": {
     "crop": [
@@ -13362,7 +13335,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/uranium-ore-1.png": {
     "crop": [
@@ -13398,7 +13371,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/uranium-processing.png": {
     "crop": [
@@ -13407,7 +13380,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/uranium-rounds-magazine-light.png": {
     "crop": [
@@ -13425,7 +13398,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/utility-science-pack.png": {
     "crop": [
@@ -13434,7 +13407,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/wall.png": {
     "crop": [
@@ -13443,7 +13416,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/wood.png": {
     "crop": [
@@ -13452,7 +13425,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/icons/wooden-chest.png": {
     "crop": [
@@ -13461,7 +13434,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/item-group/fluids.png": {
     "crop": [
@@ -13470,7 +13443,7 @@
       128,
       128
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/item-group/intermediate-products.png": {
     "crop": [
@@ -13479,7 +13452,7 @@
       128,
       128
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/item-group/logistics.png": {
     "crop": [
@@ -13488,7 +13461,7 @@
       128,
       128
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/item-group/military.png": {
     "crop": [
@@ -13497,7 +13470,7 @@
       128,
       128
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/item-group/production.png": {
     "crop": [
@@ -13506,7 +13479,7 @@
       128,
       128
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/item-group/signals.png": {
     "crop": [
@@ -13515,7 +13488,7 @@
       128,
       128
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__base__/graphics/terrain/concrete/concrete-inner-corner-mask.png": {
     "crop": [
@@ -16305,7 +16278,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__core__/graphics/icons/mip/empty-robot-material-slot.png": {
     "crop": [
@@ -16485,7 +16458,7 @@
       64,
       64
     ],
-    "scale": 0.5
+    "scale": 1.0
   },
   "__core__/graphics/icons/mip/none-editor-icon.png": {
     "crop": [
@@ -17312,15 +17285,6 @@
       0,
       40,
       40
-    ],
-    "scale": 0.5
-  },
-  "__core__/graphics/icons/unknown.png": {
-    "crop": [
-      0,
-      0,
-      64,
-      64
     ],
     "scale": 0.5
   },

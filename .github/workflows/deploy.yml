@@ -26,7 +26,15 @@ on:
         type: choice
         default: none
         options:
-          [none, all, vanilla-2.0, space-age, space-exploration, vanilla-2.0-slim]
+          [
+            none,
+            all,
+            vanilla-2.0,
+            space-age,
+            space-exploration,
+            vanilla-2.0-slim,
+            space-exploration-slim,
+          ]
 
 # One deploy at a time; a new push supersedes a queued one but never cancels
 # a running deploy mid-publish.
@@ -55,7 +63,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        pack: [vanilla-2.0, space-age, space-exploration, vanilla-2.0-slim]
+        pack:
+          [
+            vanilla-2.0,
+            space-age,
+            space-exploration,
+            vanilla-2.0-slim,
+            space-exploration-slim,
+          ]
     steps:
       - uses: actions/checkout@v4
 
@@ -214,8 +229,9 @@ jobs:
           import json, sys
           committed, regen = sys.argv[1], sys.argv[2]
           ok = True
-          if open(f"{committed}/data.json", "rb").read() != open(f"{regen}/data.json", "rb").read():
-              print("::error::slim data.json is not byte-identical to the committed one"); ok = False
+          base = committed.rsplit("/", 1)[0] + "/" + committed.rsplit("/", 1)[1].removesuffix("-slim")
+          if open(f"{base}/data.json", "rb").read() != open(f"{regen}/data.json", "rb").read():
+              print("::error::slim data.json is not byte-identical to the base pack's committed one"); ok = False
           if json.load(open(f"{committed}/textures.json")) != json.load(open(f"{regen}/textures.json")):
               print("::error::textures.json drifted from the committed sidecar"); ok = False
           sys.exit(0 if ok else 1)
@@ -283,7 +299,14 @@ jobs:
             fi
             SERVED="$SERVED $p"
             mkdir -p "_site/$p"
-            cp "packs/$p/data.json" "_site/$p/"
+            # Graphics-only variants don't commit a duplicate data.json — it is
+            # byte-identical to the base pack's (variantOf), which serves it.
+            if [ -f "packs/$p/data.json" ]; then
+              cp "packs/$p/data.json" "_site/$p/"
+            else
+              BASEPACK=$(python3 -c "import json,sys; print(next(e.get('variantOf','') for e in json.load(open('packs/packs.json')) if e['id']=='$p'))")
+              cp "packs/$BASEPACK/data.json" "_site/$p/"
+            fi
             [ -f "packs/$p/textures.json" ] && cp "packs/$p/textures.json" "_site/$p/"
             [ -d "packs/$p/browser" ] && cp -r "packs/$p/browser" "_site/$p/"
             cp -r "textures/textures-$p/." "_site/$p/"
